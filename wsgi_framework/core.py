@@ -9,7 +9,7 @@ class Application:
 
     def __call__(self, environ, start_response):
         path = environ['PATH_INFO']
-        if not path.endswoth('/'):
+        if not path.endswith('/'):
             path += '/'
 
         view = self.urls.get(path, NotFoundView())
